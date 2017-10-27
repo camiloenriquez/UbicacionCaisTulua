@@ -9,6 +9,9 @@ import com.google.gson.annotations.SerializedName;
 
 public class DatosColombia{
 
+
+
+
     @SerializedName("latitud")
     @Expose
     private Double latitud;
@@ -20,7 +23,7 @@ public class DatosColombia{
     private String nombre;
 
 
-    public Double getLatitud() {
+     public Double getLatitud() {
         return latitud;
     }
 
@@ -45,6 +48,5 @@ public class DatosColombia{
     }
 
 
+
 }
-
-

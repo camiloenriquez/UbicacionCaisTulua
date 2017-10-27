@@ -1,5 +1,6 @@
 package com.example.camil.mapaspasajeros;
 
+import android.graphics.Bitmap;
 import android.support.v4.app.FragmentActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -10,6 +11,7 @@ import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
+import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
 
@@ -57,10 +59,11 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
                     for (int i = 0; i < listaMunicipios.size(); i++) {
                         DatosColombia dC = (DatosColombia) listaMunicipios.get(i);
                        LatLng sydney = new LatLng(dC.getLatitud(),dC.getLongitud());
-                        mMap.addMarker(new MarkerOptions().position(sydney).title(dC.getNombre()));
+                        mMap.addMarker(new MarkerOptions().position(sydney).title(dC.getNombre()).icon(BitmapDescriptorFactory.fromResource(R.drawable.vlc)));
                         // LatLng sydney = new LatLng(-34, 151);
                         mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(sydney,1));
                       mMap.getUiSettings().setZoomControlsEnabled(true);
+                       //mMap.setMapType(GoogleMap.MAP_TYPE_HYBRID);
  }
                 } else {
                     Log.e(TAG, "onResponse " + response.errorBody());
@@ -73,7 +76,8 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
 
             }
         });
-    }}
+    }
+}
 
 
 

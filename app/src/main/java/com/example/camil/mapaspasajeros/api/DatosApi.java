@@ -12,7 +12,7 @@ import retrofit2.http.GET;
  */
 
 public interface DatosApi {
-    @GET("wat4-bzdx")
+    @GET("efg9-8jrp.json")
     Call<List<DatosColombia>> obtenerListaDatoss();
 
 }
